@@ -1,10 +1,10 @@
 
 // import the necessary libraries
-import React, { useState } from 'react';
-import './EmployeeForm';
+import { useState } from 'react';
+import './EmployeeForm.css';
 
 // define the function
-function EmployeeForm(props) {
+function EmployeeForm({ addEmployee }) {
   
     // define the varibales and setter functions, and set them to the default state
     const [name, setName] = useState('');
@@ -14,12 +14,18 @@ function EmployeeForm(props) {
 
   // define a submit function
   const handleSubmit = (e) => {
-    console.log('Form submitted!', e);
     e.preventDefault();
-    console.log('Name: ', name);
-    console.log('Email: ', email);
-    console.log('Title: ', title);
-    console.log('Department: ', department);
+    if (!name || !email || !title || !department) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    addEmployee({ name, email, title, department });
+
+    setName('');
+    setEmail('');
+    setTitle('');
+    setDepartment('');
   }
 
   // Render the HTML
@@ -48,7 +54,7 @@ function EmployeeForm(props) {
       <div>
         <label htmlFor="title">Title: </label>
         <input
-          type="title"
+          type="text"
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -57,14 +63,13 @@ function EmployeeForm(props) {
       <div>
         <label htmlFor="department">Department: </label>
         <input
-          type="department"
+          type="text"
           id="department"
           value={department}
           onChange={(e) => setDepartment(e.target.value)}
         />
       </div>
-      <button type="submit">Add</button>
-      <h2>Employee List</h2>
+      <button type="submit">Submit</button>
     </form>
   );
 }
