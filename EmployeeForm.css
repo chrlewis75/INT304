@@ -1,4 +1,3 @@
-
 .employee-form {
     display: flex;
     flex-direction: column;
@@ -29,7 +28,7 @@
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    color: #333;
+    color: #f8f4f4;
     align-items: center;
   }
   

@@ -1,0 +1,42 @@
+body {
+  background-color:blue;
+  color: white;
+}
+
+.App-Header {
+  display: flex;
+  justify-content:center;
+  align-items: center; 
+  border-bottom: 5px solid black; 
+  text-align: center;
+}
+
+.employee-form {
+  flex: 1; 
+  margin-left: 250px; 
+  text-align: left;
+}
+
+.employee-form h2 {
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.employee-form button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; 
+}
+
+.employee-list {
+  flex: 1; 
+  margin-right: 250px; 
+  text-align: left;
+}
+
+.employee-list h2 {
+  margin: 0;
+  text-align: center;
+}
