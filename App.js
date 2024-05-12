@@ -24,10 +24,14 @@ function App() {
 
   return (
     // Add the div because JSX requires a singular parent and adding a button
-    <div className="App-header">
-      <h1>Employee Form</h1>
-      <EmployeeForm onSubmit={addEmployee} />
-      <EmployeeList employees={employees} />
+    <div className="App">
+      <header className="App-Header">
+        <h1>Employee Form</h1>
+      </header>
+      <div className="content">
+        <EmployeeForm onSubmit={addEmployee} className="employee-form" />
+        <EmployeeList employees={employees} className="employee-list" />
+      </div>
     </div>
   );
 
